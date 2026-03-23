@@ -14,9 +14,9 @@ class LoginViewModel : ViewModel() {
             _uiState.value = LoginState.Error("Username or password cannot be blank")
         } else if (username.length <= 8 && password.length <= 8) {
             _uiState.value = LoginState.Error("Username or password needs to be longer than 8 characters")
+        } else {
+            _uiState.value = LoginState.Success
         }
-
-        _uiState.value = LoginState.Success
     }
 }
 
